@@ -2,18 +2,20 @@ server:
   port: 3032
 spring:
   application:
-    name: dfpm-usuario-service
-
-  datasource:
-    url: jdbc:mysql://localhost:3306/dfpm_usuario
-    username: root
-    password:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
+    name: prac-prestamo-service
   jpa:
+    database: POSTGRESQL
+    show-sql: true
+    generate-ddl: true
     hibernate:
       ddl-auto: update
-    show-sql: true
+  sql:
+    init:
+      platform: postgres
+  datasource:
+    url: jdbc:postgresql://localhost:5432/prac-prestamo
+    username: postgres
+    password: "123456"
 
 springdoc:
   api-docs:
