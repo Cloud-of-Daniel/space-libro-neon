@@ -4,19 +4,16 @@ spring:
   application:
     name: dfpm-libro-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/dfpm-libro
-    username: postgres
-    password: 123456
+    url: jdbc:postgresql://ep-bold-fire-acpd4v3x-pooler.sa-east-1.aws.neon.tech/neondb?user=neondb_owner&password=npg_qIV6KStL0wBn&sslmode=require
+    username: neondb_owner
+    password: npg_qIV6KStL0wBn
     driver-class-name: org.postgresql.Driver
+
   jpa:
-    database: POSTGRESQL
-    show-sql: true
     hibernate:
       ddl-auto: update
+    show-sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-  sql:
-    init:
-      platform: postgres
 
 springdoc:
   api-docs:
