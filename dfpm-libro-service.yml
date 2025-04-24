@@ -1,0 +1,32 @@
+server:
+  port: 3031
+spring:
+  application:
+    name: dfpm-libro-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dfpm-libro
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  sql:
+    init:
+      platform: postgres
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:3030/eureka
+  instance:
+    hostname: localhost

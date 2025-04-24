@@ -1,0 +1,33 @@
+server:
+  port: 3999
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:3030/eureka
+      #defaultZone: ${EUREKA_URI:http://localhost:8090/eureka}
+  instance:
+    hostname: localhost
+    #instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+spring:
+  cloud:
+    gateway:
+
+      discovery:
+        locator:
+          enable: true
+      routes:
+        - id: dfpm-libro-service
+          uri: lb://dfpm-libro-service
+          predicates:
+            - Path=/libro/**, /profession/**
+
+        - id: dfpm-usuario-service
+          uri: lb://dfpm-usuario-service
+          predicates:
+            - Path=/usuario/**
+
+        - id: dfpm-prestamo-service
+          uri: lb://dfpm-prestamo-service
+          predicates:
+            - Path=/prestamo/**
