@@ -2,7 +2,7 @@ server:
   port: 2023
 spring:
   application:
-    name: dfpm-prestamo-service
+    name: prac-libro-service
 
   datasource:
     url: jdbc:postgresql://localhost:5432/dfpm-prestamo
